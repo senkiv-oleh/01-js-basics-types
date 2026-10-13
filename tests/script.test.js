@@ -25,6 +25,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(getStringLength('JavaScript is awesome!')).toBe(22);
             expect(getStringLength('1234567890')).toBe(10);
         });
+
+        test('handles special characters, newlines, and non-latin alphabets', () => {
+            expect(getStringLength('!@#$%')).toBe(5);
+            expect(getStringLength('a\nb')).toBe(3);
+            expect(getStringLength('Кирилиця')).toBe(8);
+        });
     });
 
     describe('1.2 toUpperCase()', () => {
@@ -34,6 +40,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(toUpperCase('123 abc!')).toBe('123 ABC!');
             expect(toUpperCase('')).toBe('');
             expect(toUpperCase('already UPPER')).toBe('ALREADY UPPER');
+        });
+
+        test('handles special characters and mixed case', () => {
+            expect(toUpperCase('!@#$')).toBe('!@#$');
+            expect(toUpperCase('mIxEd CaSe')).toBe('MIXED CASE');
+            expect(toUpperCase('кирилиця')).toBe('КИРИЛИЦЯ');
         });
     });
 
@@ -45,15 +57,27 @@ describe('Task 1: Strings and Numbers', () => {
             expect(toLowerCase('')).toBe('');
             expect(toLowerCase('already lower')).toBe('already lower');
         });
+
+        test('handles special characters and mixed case', () => {
+            expect(toLowerCase('!@#$')).toBe('!@#$');
+            expect(toLowerCase('MiXeD cAsE')).toBe('mixed case');
+            expect(toLowerCase('КИРИЛИЦЯ')).toBe('кирилиця');
+        });
     });
 
     describe('1.4 trimString()', () => {
         test('trims spaces from both sides without affecting middle spaces', () => {
             expect(trimString('  hello world  ')).toBe('hello world');
-            expect(trimString('   frontend   ')).toBe('frontend');
+            expect(trimString('  frontend  ')).toBe('frontend');
             expect(trimString('no spaces')).toBe('no spaces');
             expect(trimString('   ')).toBe('');
             expect(trimString('\t code \n')).toBe('code');
+        });
+
+        test('handles multiline strings and symbols', () => {
+            expect(trimString('\t\n multiple lines \n\t')).toBe('multiple lines');
+            expect(trimString('a b c')).toBe('a b c');
+            expect(trimString('!@#  ')).toBe('!@#');
         });
     });
 
@@ -65,6 +89,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(getFirstChar(' спецсимвол')).toBe(' ');
             expect(getFirstChar('')).toBe('');
         });
+
+        test('handles single characters, symbols, and newlines', () => {
+            expect(getFirstChar('A')).toBe('A');
+            expect(getFirstChar('!hello')).toBe('!');
+            expect(getFirstChar('\nnew')).toBe('\n');
+        });
     });
 
     describe('1.6 getLastChar()', () => {
@@ -74,6 +104,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(getLastChar('abc!')).toBe('!');
             expect(getLastChar('space ')).toBe(' ');
             expect(getLastChar('')).toBe('');
+        });
+
+        test('handles single characters, numbers, and newlines', () => {
+            expect(getLastChar('Z')).toBe('Z');
+            expect(getLastChar('end\n')).toBe('\n');
+            expect(getLastChar('12345')).toBe('5');
         });
     });
 
@@ -85,6 +121,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(combineStrings('a', 'b')).toBe('a b');
             expect(combineStrings('123', '456')).toBe('123 456');
         });
+
+        test('handles empty strings, symbols, and spaced strings', () => {
+            expect(combineStrings('!@#', '$%^')).toBe('!@# $%^');
+            expect(combineStrings('', '')).toBe(' ');
+            expect(combineStrings('  left', 'right  ')).toBe('  left right  ');
+        });
     });
 
     describe('1.8 replaceWord()', () => {
@@ -94,6 +136,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(replaceWord('hello world', 'world', 'there')).toBe('hello there');
             expect(replaceWord('123 456 789', '456', '000')).toBe('123 000 789');
         });
+
+        test('handles missing targets, deletions, and exact matches', () => {
+            expect(replaceWord('hello world', 'mars', 'jupiter')).toBe('hello world');
+            expect(replaceWord('apple apple', 'apple ', '')).toBe('apple');
+            expect(replaceWord('word', 'word', 'newWord')).toBe('newWord');
+        });
     });
 
     describe('1.9 getSubstring()', () => {
@@ -102,6 +150,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(getSubstring('Frontend', 4, 8)).toBe('end');
             expect(getSubstring('Hello World', 6, 11)).toBe('World');
             expect(getSubstring('testing', 1, 4)).toBe('est');
+        });
+
+        test('handles zero range, end of string, and empty results', () => {
+            expect(getSubstring('JavaScript', 4, 10)).toBe('Script');
+            expect(getSubstring('abc', 0, 0)).toBe('');
+            expect(getSubstring('hello', 2, 2)).toBe('');
         });
     });
 
@@ -113,6 +167,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(repeatString('test', 0)).toBe('');
             expect(repeatString('-', 4)).toBe('----');
         });
+
+        test('handles empty strings, numbers, and spaces', () => {
+            expect(repeatString('', 5)).toBe('');
+            expect(repeatString('12', 2)).toBe('1212');
+            expect(repeatString(' ', 3)).toBe('   ');
+        });
     });
 
     describe('1.11 padStartWithAsterisk()', () => {
@@ -122,6 +182,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(padStartWithAsterisk('12345678', 8)).toBe('12345678');
             expect(padStartWithAsterisk('hello', 10)).toBe('*****hello');
             expect(padStartWithAsterisk('test', 2)).toBe('test');
+        });
+
+        test('handles empty strings, already padded strings, and shorter target lengths', () => {
+            expect(padStartWithAsterisk('', 3)).toBe('***');
+            expect(padStartWithAsterisk('abc', 1)).toBe('abc');
+            expect(padStartWithAsterisk('**', 5)).toBe('*****');
         });
     });
 
@@ -134,6 +200,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(roundToDecimal(9.999, 1)).toBe(10);
             expect(roundToDecimal(0.12345, 4)).toBe(0.1235);
         });
+
+        test('handles negative numbers, zero, and rounding to integer', () => {
+            expect(roundToDecimal(-3.14159, 2)).toBe(-3.14);
+            expect(roundToDecimal(0, 2)).toBe(0);
+            expect(roundToDecimal(1.5, 0)).toBe(2);
+        });
     });
 
     describe('1.13 getAbsoluteValue()', () => {
@@ -143,6 +215,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(getAbsoluteValue(-100.5)).toBe(100.5);
             expect(getAbsoluteValue(0)).toBe(0);
             expect(getAbsoluteValue(-0.001)).toBe(0.001);
+        });
+
+        test('handles large numbers, floats, and negative zero', () => {
+            expect(getAbsoluteValue(-999999)).toBe(999999);
+            expect(getAbsoluteValue(3.14)).toBe(3.14);
+            expect(getAbsoluteValue(-0)).toBe(0);
         });
     });
 
@@ -155,6 +233,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(powerOf(2, -1)).toBe(0.5);
             expect(powerOf(7, 1)).toBe(7);
         });
+
+        test('handles negative bases and zero base', () => {
+            expect(powerOf(-2, 2)).toBe(4);
+            expect(powerOf(-2, 3)).toBe(-8);
+            expect(powerOf(0, 5)).toBe(0);
+        });
     });
 
     describe('1.15 getSquareRoot()', () => {
@@ -165,6 +249,12 @@ describe('Task 1: Strings and Numbers', () => {
             expect(getSquareRoot(2.25)).toBe(1.5);
             expect(getSquareRoot(144)).toBe(12);
             expect(getSquareRoot(1)).toBe(1);
+        });
+
+        test('handles fractions, large numbers, and small decimals', () => {
+            expect(getSquareRoot(0.25)).toBe(0.5);
+            expect(getSquareRoot(10000)).toBe(100);
+            expect(getSquareRoot(0.01)).toBe(0.1);
         });
     });
 });
