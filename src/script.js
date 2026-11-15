@@ -5,6 +5,7 @@
  */
 function getStringLength(str) {
   // TODO: Implement function
+  return str.length;
 }
 
 /**
@@ -14,6 +15,7 @@ function getStringLength(str) {
  */
 function toUpperCase(str) {
   // TODO: Implement function
+  return str.toUpperCase();
 }
 
 /**
@@ -23,6 +25,7 @@ function toUpperCase(str) {
  */
 function trimString(str) {
   // TODO: Implement function
+  return(str.trim())
 }
 
 /**
@@ -32,6 +35,7 @@ function trimString(str) {
  */
 function getLastChar(str) {
   // TODO: Implement function
+  return str.slice(-1);
 }
 
 /**
@@ -42,6 +46,7 @@ function getLastChar(str) {
  */
 function combineStrings(str1, str2) {
   // TODO: Implement function
+  return str1 + " " + str2;
 }
 
 /**
@@ -53,6 +58,7 @@ function combineStrings(str1, str2) {
  */
 function replaceWord(str, target, replacement) {
   // TODO: Implement function
+  return str.replace(target, replacement);
 }
 
 /**
@@ -64,6 +70,7 @@ function replaceWord(str, target, replacement) {
  */
 function getSubstring(str, start, end) {
   // TODO: Implement function
+  return str.slice(start, end);
 }
 
 /**
@@ -74,6 +81,7 @@ function getSubstring(str, start, end) {
  */
 function repeatString(str, count) {
   // TODO: Implement function
+  return str.repeat(count);
 }
 
 /**
@@ -84,6 +92,7 @@ function repeatString(str, count) {
  */
 function padStartWithAsterisk(str, targetLength) {
   // TODO: Implement function
+  return str.padStart(targetLength, '*');
 }
 
 /**
@@ -92,7 +101,7 @@ function padStartWithAsterisk(str, targetLength) {
  * @returns {string} Example: "hello" -> "string", 42 -> "number"
  */
 function getType(value) {
-  // TODO: Implement function
+  return typeof(value);
 }
 
 /**
@@ -101,7 +110,7 @@ function getType(value) {
  * @returns {number} Example: "42px" -> 42, "100" -> 100
  */
 function parseInteger(str) {
-  // TODO: Implement function
+  return parseInt(str, 10);
 }
 
 /**
@@ -111,6 +120,7 @@ function parseInteger(str) {
  */
 function checkIsNaN(value) {
   // TODO: Implement function
+  return Number.isNaN(value);
 }
 
 /**
@@ -121,6 +131,7 @@ function checkIsNaN(value) {
  */
 function roundToDecimal(num, decimals) {
   // TODO: Implement function
+  return Number(num.toFixed(decimals));
 }
 
 /**
@@ -130,6 +141,7 @@ function roundToDecimal(num, decimals) {
  */
 function roundDown(num) {
   // TODO: Implement function
+  return Math.floor(num);
 }
 
 /**
@@ -141,6 +153,7 @@ function roundDown(num) {
  */
 function findMax(a, b, c) {
   // TODO: Implement function
+  return Math.max(a, b, c);
 }
 
 /**
@@ -151,6 +164,7 @@ function findMax(a, b, c) {
  */
 function getRemainder(a, b) {
   // TODO: Implement function
+  return a % b;
 }
 
 /**
@@ -161,6 +175,7 @@ function getRemainder(a, b) {
  */
 function exponentiate(base, exponent) {
   // TODO: Implement function
+  return base ** exponent;
 }
 
 /**
@@ -171,6 +186,7 @@ function exponentiate(base, exponent) {
  */
 function sumWithUnaryPlus(a, b) {
   // TODO: Implement function
+  return +a + +b;
 }
 
 /**
@@ -182,6 +198,9 @@ function sumWithUnaryPlus(a, b) {
  */
 function applyCompoundOperators(num, addVal, multVal) {
   // TODO: Implement function
+  num += addVal;
+  num *= multVal;
+  return num
 }
 
 /**
@@ -191,6 +210,7 @@ function applyCompoundOperators(num, addVal, multVal) {
  */
 function logGreeting(name) {
   // TODO: Implement function
+  console.log(`Hello, ${name}!`)
 }
 
 module.exports = {
