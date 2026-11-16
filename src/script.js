@@ -4,7 +4,7 @@
  * @returns {number} Example: "hello" -> 5
  */
 function getStringLength(str) {
-  // TODO: Implement function
+  return str.length;
 }
 
 /**
