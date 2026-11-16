@@ -1,10 +1,11 @@
+
 /**
  * Task 1.1: Повернути довжину рядка.
  * @param {string} str
  * @returns {number} Example: "hello" -> 5
  */
 function getStringLength(str) {
-  // TODO: Implement function
+    return str.length;
 }
 
 /**
@@ -13,7 +14,7 @@ function getStringLength(str) {
  * @returns {string} Example: "hello" -> "HELLO"
  */
 function toUpperCase(str) {
-  // TODO: Implement function
+    return str.toUpperCase();
 }
 
 /**
@@ -22,7 +23,7 @@ function toUpperCase(str) {
  * @returns {string} Example: " hello " -> "hello"
  */
 function trimString(str) {
-  // TODO: Implement function
+    return str.trim();
 }
 
 /**
@@ -31,187 +32,143 @@ function trimString(str) {
  * @returns {string} Example: "JavaScript" -> "t"
  */
 function getLastChar(str) {
-  // TODO: Implement function
+    return str.length === 0 ? "" : str[str.length - 1];
 }
 
 /**
- * Task 1.5: Об'єднати (конкатенувати) два рядки через пробіл.
- * @param {string} str1
- * @param {string} str2
- * @returns {string} Example: ("Hello", "World") -> "Hello World"
+ * Task 1.5: Об'єднати два рядки через пробіл.
  */
 function combineStrings(str1, str2) {
-  // TODO: Implement function
+    return `${str1} ${str2}`;
 }
 
 /**
- * Task 1.6: Замінити перше входження слова у рядку на інше слово.
- * @param {string} str
- * @param {string} target
- * @param {string} replacement
- * @returns {string} Example: ("I like apples", "apples", "oranges") -> "I like oranges"
+ * Task 1.6: Замінити перше входження слова у рядку.
  */
 function replaceWord(str, target, replacement) {
-  // TODO: Implement function
+    return str.replace(target, replacement);
 }
 
 /**
- * Task 1.7: Отримати частину рядка (підрядок) за вказаними індексами (від start до end).
- * @param {string} str
- * @param {number} start
- * @param {number} end
- * @returns {string} Example: ("JavaScript", 0, 4) -> "Java"
+ * Task 1.7: Отримати частину рядка.
  */
 function getSubstring(str, start, end) {
-  // TODO: Implement function
+    return str.slice(start, end);
 }
 
 /**
  * Task 1.8: Повторити рядок вказану кількість разів.
- * @param {string} str
- * @param {number} count
- * @returns {string} Example: ("abc", 3) -> "abcabcabc"
  */
 function repeatString(str, count) {
-  // TODO: Implement function
+    return str.repeat(count);
 }
 
 /**
- * Task 1.9: Заповнити початок рядка символом '*' до вказаної довжини.
- * @param {string} str
- * @param {number} targetLength
- * @returns {string} Example: ("5678", 8) -> "****5678"
+ * Task 1.9: Заповнити початок рядка символом '*'.
  */
 function padStartWithAsterisk(str, targetLength) {
-  // TODO: Implement function
+    return str.padStart(targetLength, "*");
 }
 
 /**
- * Task 1.10: Повернути тип даних переданого значення (за допомогою typeof).
- * @param {any} value
- * @returns {string} Example: "hello" -> "string", 42 -> "number"
+ * Task 1.10: Повернути тип даних.
  */
 function getType(value) {
-  // TODO: Implement function
+    return typeof value;
 }
 
 /**
- * Task 1.11: Перетворити рядок у ціле число (parseInt).
- * @param {string} str
- * @returns {number} Example: "42px" -> 42, "100" -> 100
+ * Task 1.11: Перетворити рядок у ціле число.
  */
 function parseInteger(str) {
-  // TODO: Implement function
+    return parseInt(str, 10);
 }
 
 /**
- * Task 1.12: Перевірити, чи є значення строго NaN (Number.isNaN).
- * @param {any} value
- * @returns {boolean} Example: NaN -> true, "abc" -> false, 123 -> false
+ * Task 1.12: Перевірити, чи є значення NaN.
  */
 function checkIsNaN(value) {
-  // TODO: Implement function
+    return Number.isNaN(value);
 }
 
 /**
- * Task 1.13: Округлити число до вказаної кількості знаків після коми (результат має бути числом).
- * @param {number} num
- * @param {number} decimals
- * @returns {number} Example: (3.14159, 2) -> 3.14
+ * Task 1.13: Округлити число до вказаної кількості знаків після коми.
  */
 function roundToDecimal(num, decimals) {
-  // TODO: Implement function
+    const factor = 10 ** decimals;
+    return Math.round(num * factor) / factor;
 }
 
 /**
- * Task 1.14: Округлити число до меншого цілого (Math.floor).
- * @param {number} num
- * @returns {number} Example: 3.7 -> 3, -3.2 -> -4
+ * Task 1.14: Округлити число до меншого цілого.
  */
 function roundDown(num) {
-  // TODO: Implement function
+    return Math.floor(num);
 }
 
 /**
- * Task 1.15: Знайти найбільше серед трьох чисел (Math.max).
- * @param {number} a
- * @param {number} b
- * @param {number} c
- * @returns {number} Example: (5, 12, 3) -> 12
+ * Task 1.15: Знайти найбільше серед трьох чисел.
  */
 function findMax(a, b, c) {
-  // TODO: Implement function
+    return Math.max(a, b, c);
 }
 
 /**
- * Task 1.16: Знайти остачу від ділення a на b за допомогою оператора %.
- * @param {number} a
- * @param {number} b
- * @returns {number} Example: (5, 2) -> 1, (8, 3) -> 2
+ * Task 1.16: Знайти остачу від ділення.
  */
 function getRemainder(a, b) {
-  // TODO: Implement function
+    return a % b;
 }
 
 /**
- * Task 1.17: Піднести base до степеня exponent за допомогою оператора **.
- * @param {number} base
- * @param {number} exponent
- * @returns {number} Example: (2, 3) -> 8, (4, 0.5) -> 2
+ * Task 1.17: Піднести число до степеня.
  */
 function exponentiate(base, exponent) {
-  // TODO: Implement function
+    return base ** exponent;
 }
 
 /**
- * Task 1.18: Перетворити два значення у числа за допомогою унарних плюсів та повернути їх суму (+a + +b).
- * @param {any} a
- * @param {any} b
- * @returns {number} Example: ("2", "3") -> 5, ("10", 5) -> 15
+ * Task 1.18: Перетворити значення у числа та повернути суму.
  */
 function sumWithUnaryPlus(a, b) {
-  // TODO: Implement function
+    return +a + +b;
 }
 
 /**
- * Task 1.19: Створити змінну із значенням num, додати addVal (+=), помножити на multVal (*=) і повернути результат.
- * @param {number} num
- * @param {number} addVal
- * @param {number} multVal
- * @returns {number} Example: (2, 5, 2) -> 14
+ * Task 1.19: Використати складені оператори.
  */
 function applyCompoundOperators(num, addVal, multVal) {
-  // TODO: Implement function
+    num += addVal;
+    num *= multVal;
+    return num;
 }
 
 /**
- * Task 1.20: Вивести в консоль (console.log) привітання у форматі "Hello, <name>!".
- * @param {string} name
- * @returns {void} Example: "Alex" -> console.log("Hello, Alex!")
+ * Task 1.20: Вивести привітання у консоль.
  */
 function logGreeting(name) {
-  // TODO: Implement function
+    console.log(`Hello, ${name}!`);
 }
 
 module.exports = {
-  getStringLength,
-  toUpperCase,
-  trimString,
-  getLastChar,
-  combineStrings,
-  replaceWord,
-  getSubstring,
-  repeatString,
-  padStartWithAsterisk,
-  getType,
-  parseInteger,
-  checkIsNaN,
-  roundToDecimal,
-  roundDown,
-  findMax,
-  getRemainder,
-  exponentiate,
-  sumWithUnaryPlus,
-  applyCompoundOperators,
-  logGreeting
+    getStringLength,
+    toUpperCase,
+    trimString,
+    getLastChar,
+    combineStrings,
+    replaceWord,
+    getSubstring,
+    repeatString,
+    padStartWithAsterisk,
+    getType,
+    parseInteger,
+    checkIsNaN,
+    roundToDecimal,
+    roundDown,
+    findMax,
+    getRemainder,
+    exponentiate,
+    sumWithUnaryPlus,
+    applyCompoundOperators,
+    logGreeting
 };
