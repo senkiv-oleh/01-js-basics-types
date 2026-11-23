@@ -4,7 +4,7 @@
  * @returns {number} Example: "hello" -> 5
  */
 function getStringLength(str) {
-  // TODO: Implement function
+  return str.length;
 }
 
 /**
@@ -13,7 +13,7 @@ function getStringLength(str) {
  * @returns {string} Example: "hello" -> "HELLO"
  */
 function toUpperCase(str) {
-  // TODO: Implement function
+  return str.toUpperCase();
 }
 
 /**
@@ -22,7 +22,7 @@ function toUpperCase(str) {
  * @returns {string} Example: " hello " -> "hello"
  */
 function trimString(str) {
-  // TODO: Implement function
+  return str.trim();
 }
 
 /**
@@ -31,7 +31,7 @@ function trimString(str) {
  * @returns {string} Example: "JavaScript" -> "t"
  */
 function getLastChar(str) {
-  // TODO: Implement function
+  return str.slice(-1);
 }
 
 /**
@@ -41,7 +41,7 @@ function getLastChar(str) {
  * @returns {string} Example: ("Hello", "World") -> "Hello World"
  */
 function combineStrings(str1, str2) {
-  // TODO: Implement function
+  return `${str1} ${str2}`;
 }
 
 /**
@@ -52,7 +52,7 @@ function combineStrings(str1, str2) {
  * @returns {string} Example: ("I like apples", "apples", "oranges") -> "I like oranges"
  */
 function replaceWord(str, target, replacement) {
-  // TODO: Implement function
+  return str.replace(target, replacement);
 }
 
 /**
@@ -63,7 +63,7 @@ function replaceWord(str, target, replacement) {
  * @returns {string} Example: ("JavaScript", 0, 4) -> "Java"
  */
 function getSubstring(str, start, end) {
-  // TODO: Implement function
+  return str.slice(start, end);
 }
 
 /**
@@ -73,7 +73,7 @@ function getSubstring(str, start, end) {
  * @returns {string} Example: ("abc", 3) -> "abcabcabc"
  */
 function repeatString(str, count) {
-  // TODO: Implement function
+  return str.repeat(count);
 }
 
 /**
@@ -83,7 +83,7 @@ function repeatString(str, count) {
  * @returns {string} Example: ("5678", 8) -> "****5678"
  */
 function padStartWithAsterisk(str, targetLength) {
-  // TODO: Implement function
+  return str.padStart(targetLength, '*');
 }
 
 /**
@@ -92,7 +92,7 @@ function padStartWithAsterisk(str, targetLength) {
  * @returns {string} Example: "hello" -> "string", 42 -> "number"
  */
 function getType(value) {
-  // TODO: Implement function
+  return typeof value;
 }
 
 /**
@@ -101,7 +101,7 @@ function getType(value) {
  * @returns {number} Example: "42px" -> 42, "100" -> 100
  */
 function parseInteger(str) {
-  // TODO: Implement function
+  return parseInt(str);
 }
 
 /**
@@ -110,7 +110,7 @@ function parseInteger(str) {
  * @returns {boolean} Example: NaN -> true, "abc" -> false, 123 -> false
  */
 function checkIsNaN(value) {
-  // TODO: Implement function
+  return Number.isNaN(value);
 }
 
 /**
@@ -120,7 +120,7 @@ function checkIsNaN(value) {
  * @returns {number} Example: (3.14159, 2) -> 3.14
  */
 function roundToDecimal(num, decimals) {
-  // TODO: Implement function
+  return Number(num.toFixed(decimals));
 }
 
 /**
@@ -129,7 +129,7 @@ function roundToDecimal(num, decimals) {
  * @returns {number} Example: 3.7 -> 3, -3.2 -> -4
  */
 function roundDown(num) {
-  // TODO: Implement function
+  return Math.floor(num);
 }
 
 /**
@@ -140,7 +140,7 @@ function roundDown(num) {
  * @returns {number} Example: (5, 12, 3) -> 12
  */
 function findMax(a, b, c) {
-  // TODO: Implement function
+  return Math.max(a, b, c);
 }
 
 /**
@@ -150,7 +150,7 @@ function findMax(a, b, c) {
  * @returns {number} Example: (5, 2) -> 1, (8, 3) -> 2
  */
 function getRemainder(a, b) {
-  // TODO: Implement function
+  return a % b;
 }
 
 /**
@@ -160,7 +160,7 @@ function getRemainder(a, b) {
  * @returns {number} Example: (2, 3) -> 8, (4, 0.5) -> 2
  */
 function exponentiate(base, exponent) {
-  // TODO: Implement function
+  return base ** exponent;
 }
 
 /**
@@ -170,7 +170,7 @@ function exponentiate(base, exponent) {
  * @returns {number} Example: ("2", "3") -> 5, ("10", 5) -> 15
  */
 function sumWithUnaryPlus(a, b) {
-  // TODO: Implement function
+  return +a + +b;
 }
 
 /**
@@ -181,7 +181,10 @@ function sumWithUnaryPlus(a, b) {
  * @returns {number} Example: (2, 5, 2) -> 14
  */
 function applyCompoundOperators(num, addVal, multVal) {
-  // TODO: Implement function
+  let result = num;
+  result += addVal;
+  result *= multVal;
+  return result;
 }
 
 /**
@@ -190,7 +193,7 @@ function applyCompoundOperators(num, addVal, multVal) {
  * @returns {void} Example: "Alex" -> console.log("Hello, Alex!")
  */
 function logGreeting(name) {
-  // TODO: Implement function
+  console.log(`Hello, ${name}!`);
 }
 
 module.exports = {
